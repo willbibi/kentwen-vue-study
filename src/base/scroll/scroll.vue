@@ -14,21 +14,20 @@
       },
       click: {
         type: Boolean,
+        default: true
+      },
+      listenScroll: {
+        type: Boolean,
         default: false
       },
       data: {
         type: Array,
         default: null
-      },
-      listenScroll: {
-        type: Boolean,
-        default: false
       }
     },
     mounted() {
       setTimeout(() => {
         this._initScroll()
-        console.log(111)
       }, 20)
     },
     methods: {
@@ -54,7 +53,7 @@
         this.scroll && this.scroll.disable()
       },
       refresh() {
-        this.scroll.refresh()
+        this.scroll && this.scroll.refresh()
       },
       scrollTo() {
         this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)

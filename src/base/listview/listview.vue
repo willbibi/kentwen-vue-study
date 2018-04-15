@@ -87,6 +87,9 @@
         let anchorIndex = parseInt(this.touch.anchorInex) + delta
         this._scrollTo(anchorIndex)
       },
+      refresh() {
+        this.$refs.listview.refresh()
+      },
       scroll(pos) {
         this.scrollY = pos.y
       },
@@ -116,7 +119,6 @@
     },
     watch: {
       data() {
-        console.log(this.data)
         setTimeout(() => {
           this._calculateHeight()
         }, 20)

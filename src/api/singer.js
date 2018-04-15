@@ -34,3 +34,27 @@ export function getSingerDetail(singId) {
   })
   return jsonp(url, data, options)
 }
+
+export function getSongPlay(songmid) {
+  const url = 'https://c.y.qq.com/base/fcgi-bin/fcg_music_express_mobile3.fcg'
+  const callBack = 'MusicJsonCallBack' + (Math.random() + '').replace('0.', '')
+  const data = Object.assign({}, {
+    g_tk: 5381,
+    loginUin: 0,
+    hostUin: 0,
+    format: 'json',
+    inCharset: 'utf8',
+    outCharset: 'utf-8',
+    notice: 0,
+    platform: 'yqq',
+    needNewCode: 1,
+    cid: 205361747,
+    callback: callBack,
+    uin: 0,
+    songmid: songmid,
+    filename: `C400${songmid}.m4a`,
+    guid: 9188381060
+  })
+  const option = {param: 'jsonpCallback', name: callBack}
+  return jsonp(url, data, option)
+}
