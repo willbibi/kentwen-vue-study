@@ -29,8 +29,7 @@ export function getSingerDetail(singId) {
     order: 'listen',
     begin: 0,
     num: 100,
-    songstatus: 1,
-    g_tk: 5381
+    songstatus: 1
   })
   return jsonp(url, data, options)
 }

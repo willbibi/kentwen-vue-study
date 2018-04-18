@@ -61,7 +61,6 @@
         this.$refs.recommend.style.bottom = bottom
         this.$refs.scroll.refresh()
       },
-
       loadImage() {
         if (!this.checkLoaded) {
           this.$refs.scroll.refresh()
